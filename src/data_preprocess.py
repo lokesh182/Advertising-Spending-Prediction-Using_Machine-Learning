@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import os
 
 class DataPreprocessing:
     def __init__(self,df):
@@ -20,7 +21,15 @@ class DataPreprocessing:
         ax.boxplot(data)
         ax.set_title("Box plot the data")
         ax.set_ylabel("Value")
+        
+        if not os.path.exists("images"):
+            os.makedirs("images")
+        
+        plt.savefig("images/outlier_detection_using_boxPlot.png")
+            
         plt.show()
+        
+        
     
     def identify_outliers_zscore(self,data:pd.Series,threshold:float = 3):
         """
