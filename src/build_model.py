@@ -1,7 +1,7 @@
-import pandas as pd
-import statsmodels.api as sm # type: ignore
-
+import statsmodels.api as sm
 class SimpleLinearRegression:
+    
+    
     def __init__(self,x,y):
         """
         Initialize the class with the data
